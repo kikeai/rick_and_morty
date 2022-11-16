@@ -1,9 +1,18 @@
-export default function SearchBar(props) {
-   console.log(props)
+import React, {useState} from "react"
+import styles from "./searcBar.module.css"
+
+
+export default function SearchBar({onSearch}) {
+   const [character, setCharacter] = useState("");
+
    return (
-      <div>
-      <input type='search' id='search' />
-      <button onClick={props.onSearch}>Agregar</button>
-      </div>
+      <form onSubmit={(e) => {
+         e.preventDefault();
+         onSearch(character);
+         setCharacter("")
+      }}>
+         <input className={styles.entrada} type='search' value={character} onChange={e => setCharacter(e.target.value)} placeholder="search"/>
+         <button className={styles.boton} type='submit'>Agregar</button>
+      </form>
    );
 }

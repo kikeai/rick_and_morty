@@ -1,0 +1,13 @@
+.navBar{
+    width: 100%;
+    background-color: rgb(37, 37, 37);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.foto{
+    max-width: 200px;
+}

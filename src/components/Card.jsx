@@ -1,11 +1,31 @@
+import styles from './cartas.module.css'
+
+function genero(props){
+   if(props.gender === "Male") {
+      return styles.male;
+   }else{
+      return styles.female;
+   }
+}
+
+function especie(props){
+   if(props.species === "Human") {
+      return styles.human;
+   }else{
+      return styles.alien;
+   }
+}
+
 export default function Card(props) {
    return (
-      <div>
-         <button onClick={props.onClose}>X</button>
-         <h2>{props.name}</h2>
-         <h2>{props.species}</h2>
-         <h2>{props.gender}</h2>
-         <img  src={props.image} alt="" />
+      <div className={styles.slide}>
+         <button className={styles.remove} onClick={props.onClose}>X</button>
+         <img className={styles.img} src={props.image} alt="" />
+         <h2 className={styles.name}>{props.name}</h2>
+         <div className={styles.detail}>
+            <h2 className={especie(props)}>{props.species}</h2>
+            <h2 className={genero(props)}>{props.gender}</h2>
+         </div>
       </div>
    );
 }

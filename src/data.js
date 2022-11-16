@@ -1,5 +1,17 @@
 const characters = [
   {
+  name: 'Rick Sanchez',
+  species: 'Alien',
+  gender: 'Male',
+  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+  },
+  {
+  name: 'Rick Sanchez',
+  species: 'Human',
+  gender: 'Male',
+  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+  },
+  {
     name: 'Morty Smith',
     species: 'Human',
     gender: 'Male',
