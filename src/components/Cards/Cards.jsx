@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from '../Card/Card.jsx';
 import styles from './cartas.module.css'
 
 export default function Cards(props) {

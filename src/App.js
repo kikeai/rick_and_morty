@@ -1,11 +1,11 @@
 import './App.css'
 import React, {useState, useEffect} from "react"
 import {Routes, Route, useNavigate} from "react-router-dom"
-import Cards from './components/Cards.jsx'
-import Nav from './components/Nav'
-import About from "./components/About.jsx"
-import Detail from "./components/Detail.jsx"
-import Inicio from "./components/inicio.jsx"
+import Cards from './components/Cards/Cards.jsx'
+import Nav from './components/Nav/Nav.jsx'
+import About from "./components/About/About.jsx"
+import Detail from "./components/Detail/Detail.jsx"
+import Inicio from "./components/Inicio/inicio.jsx"
 
 
 function App () {
@@ -23,7 +23,7 @@ function App () {
   }
   useEffect(() => {
     !access && navigate('/');
- }, [access]);
+ }, [access, navigate]);
 
   function onSearch(character){
     fetch(`https://rickandmortyapi.com/api/character/${character}`)

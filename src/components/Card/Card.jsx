@@ -1,4 +1,4 @@
-import styles from './cartas.module.css'
+import styles from '../Cards/cartas.module.css'
 import {Link} from "react-router-dom"
 
 function genero(props){
@@ -22,7 +22,7 @@ export default function Card(props) {
       <div className={styles.slide}>
          <button className={styles.remove} onClick={props.onClose}>X</button>
          <img className={styles.img} src={props.image} alt="" />
-         <Link to={`/detail/${props.tid}`}>
+         <Link to={`/detail/${props.tid}`} className={styles.link}>
             <h2 className={styles.name}>{props.name}</h2>
          </Link>
          <div className={styles.detail}>

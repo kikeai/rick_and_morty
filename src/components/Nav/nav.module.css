@@ -8,6 +8,20 @@
     justify-content: space-around;
 }
 
+.decorationLink{
+    text-decoration: none;
+}
+
+.sobremi{
+    font-size: 1em;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.sobremi:hover{
+    color: rgb(40, 240, 57);
+}
+
 .foto{
     max-width: 200px;
 }

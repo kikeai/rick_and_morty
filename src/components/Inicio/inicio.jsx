@@ -1,7 +1,7 @@
-import gif from "./img/gif.gif"
+import gif from "../img/gif.gif"
 //import { Link } from "react-router-dom"
 import styles from "./inicio.module.css"
-import Form from "./Form"
+import Form from "../Form/Form.jsx"
 
 export default function Inicio(props){
     return (

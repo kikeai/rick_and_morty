@@ -2,19 +2,20 @@ import styles from "./form.module.css"
 import { useState } from "react"
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-const passwortRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6, 10}$/;
+const passwortRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
 function validate(inputs){
     const errors = {};
 
     if (!emailRegex.test(inputs.username)) {
-        errors.username = "Debe ser un correo electronico"
-    } if(!passwortRegex.test(inputs.password)){
-        errors.password = "Almenos un numero y un largo de 6 a 10 caracteres"
+        errors.username = "*Debe ser un correo electrónico"
+    } else if(!passwortRegex.test(inputs.password)){
+        errors.password = "*Mínimo 6 caracteres"
     }
    
    return errors;
 }
+
 
 export default function Form({login}){
     const [userData, setUserData] = useState({
@@ -34,7 +35,7 @@ export default function Form({login}){
         });
         setErrors(
           validate({
-             ...errors,
+             ...userData,
              [e.target.name]: e.target.value,
           })
        );
@@ -52,15 +53,17 @@ export default function Form({login}){
         <p>¿No tienes una cuenta? <a href="/">Ingresa aquí</a></p>
         
         <div className={styles.formGroup}>
-            <input type="text" name="username" className={errors.username? styles.formInputWarning: styles.formInputOk} value={userData.username} onChange={handleChange} placeholder=" " autoComplete="off" />
-            <label for="user" className={styles.formLabel}>UserName</label>
+            <input type="text" name="username" className={styles.formInputOk} value={userData.username} onChange={handleChange} placeholder=" " autoComplete="off" />
+            <label className={styles.formLabel}>UserName</label>
             <span className={styles.formLine}></span>
+            { errors.username? <p className={styles.errorMessage}>{errors.username}</p>: null }
         </div>
         
         <div className={styles.formGroup}>
-            <input type="password" name="password" className={errors.password? styles.formInputWarning: styles.formInputOk} value={userData.password} onChange={handleChange} placeholder=" " autoComplete="off" />
+            <input type="password" name="password" className={styles.formInputOk} value={userData.password} onChange={handleChange} placeholder=" " autoComplete="off" />
             <label for="password" className={styles.formLabel}>Password</label>
             <span className={styles.formLine}></span>
+            { errors.password? <p className={styles.errorMessage}>{errors.password}</p>: null }
         </div>
 
         <button type="onSubmit" className={styles.boton}>Entrar</button>
