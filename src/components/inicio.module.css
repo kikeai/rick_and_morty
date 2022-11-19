@@ -1,0 +1,13 @@
+.body{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.image{
+    max-width: 90%;
+}

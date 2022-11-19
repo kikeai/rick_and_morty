@@ -37,7 +37,7 @@ export default function Detail(){
             <h3>{`Gender: ${character.gender}`}</h3>
             <img src={character.image} alt={character.name} />
             <br/>
-            <Link to="/">Wooba Loobaa dub dub</Link>
+            <Link to="/home">Wooba Loobaa dub dub</Link>
         </div>
     )
 }
