@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
+import styles from "./detail.module.css"
 
 export default function Detail(){
     const params = useParams();
@@ -30,14 +31,23 @@ export default function Detail(){
 //Image
 
     return (
-        <div>
-            <h3>{`Nombre: ${character.name}`}</h3>
-            <h3>{`Status: ${character.status}`}</h3>
-            <h3>{`Specie: ${character.species}`}</h3>
-            <h3>{`Gender: ${character.gender}`}</h3>
-            <img src={character.image} alt={character.name} />
-            <br/>
-            <Link to="/home">Wooba Loobaa dub dub</Link>
+        <div className={styles.page}>
+            <div>
+               <img className={styles.image} src={character.image} alt={character.name} />
+            </div>
+            <Link to="/home" className={styles.boton}>Back Home</Link>
+            <div>
+               <div className={styles.info}>
+                  <div>
+                     <h3 className={styles.name}>{`${character.name}`}</h3>
+                  </div>
+                  <div className={styles.details}>
+                     <h3 className={styles.specification}>{`Status: ${character.status}`}</h3>
+                     <h3 className={styles.specification}>{`Specie: ${character.species}`}</h3>
+                     <h3 className={styles.specification}>{`Gender: ${character.gender}`}</h3>
+                  </div>
+               </div>
+            </div>
         </div>
     )
 }
