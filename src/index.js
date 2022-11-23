@@ -3,7 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-const browser = <BrowserRouter><App /></BrowserRouter>
+import { Provider } from 'react-redux';
+import store from "./redux/store"
+const browser = <Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>
 
 ReactDOM.render(
   browser,

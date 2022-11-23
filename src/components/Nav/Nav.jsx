@@ -8,6 +8,7 @@ export default function Nav(props){
         <nav className={styles.navBar}>
             <div><Link to="/home" className={styles.decorationLink}><img className={styles.foto} src={logo} alt="logo" /></Link></div>
             <Link to="/about" className={styles.sobremi}>Creador</Link>
+            <Link to="/favorites" className={styles.sobremi}>Favoritos</Link>
 
             <SearchBar onSearch={props.onSearch}/>
         </nav>

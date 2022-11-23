@@ -1,5 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from '../Cards/cartas.module.css'
 import {Link} from "react-router-dom"
+import { useState, useEffect } from 'react';
+import { connect } from "react-redux";
+import { addFavorite, deleteFavorite} from "../../redux/actions"
 
 function genero(props){
    if(props.gender === "Male") {
@@ -17,12 +21,35 @@ function especie(props){
    }
 }
 
-export default function Card(props) {
+function Card(props) {
+   const [isFav, setIsFav] = useState(false);
+
+   function handleFavorite(){
+      if(isFav){
+         setIsFav(false);
+         props.deleteFavorite(props.id)
+      }else {
+         setIsFav(true);
+         props.addFavorite(props)
+      }
+   }
+   useEffect(() => {
+      props.myFavorites.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }
+      });
+   }, [props.myFavorites]);
+   
    return (
       <div className={styles.slide}>
+         {
+            isFav ? ( <button className={styles.favorite} onClick={handleFavorite}>❤️</button>):
+            ( <button className={styles.favorite} onClick={handleFavorite}>🤍</button> )
+         }
          <button className={styles.remove} onClick={props.onClose}>X</button>
          <img className={styles.img} src={props.image} alt="" />
-         <Link to={`/detail/${props.tid}`} className={styles.link}>
+         <Link to={`/detail/${props.id}`} className={styles.link}>
             <h2 className={styles.name}>{props.name}</h2>
          </Link>
          <div className={styles.detail}>
@@ -32,3 +59,18 @@ export default function Card(props) {
       </div>
    );
 }
+
+export function mapStateToProps(state){
+   return {
+      myFavorites: state.myFavorites
+   }
+}
+
+export function mapDispatchToProps(dispatch){
+   return {
+      addFavorite: (personaje) => dispatch(addFavorite(personaje)),
+      deleteFavorite: (id) => dispatch(deleteFavorite(id))
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

@@ -1,11 +1,12 @@
 import './App.css'
 import React, {useState, useEffect} from "react"
-import {Routes, Route, useNavigate} from "react-router-dom"
+import {Routes, Route, useNavigate, useLocation} from "react-router-dom"
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav.jsx'
 import About from "./components/About/About.jsx"
 import Detail from "./components/Detail/Detail.jsx"
 import Inicio from "./components/Inicio/inicio.jsx"
+import Favorites from './components/Favorites/Favorites.jsx'
 
 
 function App () {
@@ -41,14 +42,16 @@ function App () {
     setCharacters(prevCharacters => prevCharacters.filter(c => c.id !== id));
   }
 
+  const location = useLocation();
 
   return (
     <div className='App' >
-     <Nav onSearch={onSearch}/>
+      {location.pathname !== "/" && <Nav onSearch={onSearch}/>}
      <Routes>
         <Route path='/' element={<Inicio login={login} />} />
         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />
         <Route path='/about' element={<About />} />
+        <Route path='/favorites' element={<Favorites />} />
         <Route path='/detail/:detailId' element={<Detail />} />
      </Routes>   
     </div>
