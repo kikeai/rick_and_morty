@@ -10,7 +10,7 @@ function Favorites({ myFavorites }){
         switch (name) {
             case "order":
                 return dispatch(actions.orderCards(value))
-            case "filter":
+            case "genero":
                 return dispatch(actions.filterCards(value))
             default:
                 break;
