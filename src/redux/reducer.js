@@ -17,11 +17,12 @@ export default function favorites(state=initialState, action){
         case DELETE_FAVORITE:
             return{
                 ...state,
-                myFavorites: state.myFavorites.filter(e => e.id !== action.payload)
+                myFavorites: state.myFavorites.filter(e => e.id !== action.payload),
+                allCharacters: state.allCharacters.filter(e => e.id !== action.payload)
             }
         case FILTER:
             const filterCopy = [...state.allCharacters]
-            const filtrado = filterCopy.filter(ch => ch.gender === action.payload)
+            const filtrado = filterCopy.filter(e => e.gender === action.payload)
             return {
                 ...state,
                  myFavorites: filtrado
