@@ -30,7 +30,12 @@ function App () {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
-         if (data.name) {
+        const doble = characters.filter(e => e.id === data.id)
+        if(doble.length){
+          window.alert('Ya agregaste este personaje');
+          return
+        }
+         if (data.name && !doble.length) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
             window.alert('No hay personajes con ese ID');
