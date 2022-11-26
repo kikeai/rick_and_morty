@@ -10,7 +10,7 @@ function Favorites({ myFavorites }){
         switch (name) {
             case "order":
                 return dispatch(actions.orderCards(value))
-            case "genero":
+            case "filter":
                 return dispatch(actions.filterCards(value))
             default:
                 break;
@@ -19,19 +19,19 @@ function Favorites({ myFavorites }){
     
     return (
         <div className={styles.carta}>
-            <div>
-                <select name="order" onClick={handleClick}>
+            <div className={styles.selects}>
+                <select className={styles.option} name="order" onClick={handleClick}>
                     <option value="Ascendente">Ascendente</option>
                     <option value="Descendente">Descendente</option>
                 </select>
 
-                <select name="genero" onClick={handleClick}>
+                <select className={styles.option} name="filter" onClick={handleClick}>
                     <option value="Male" >Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>
                     <option value="unknown">unknown</option>
                 </select>
-            </div> <br />
+            </div>
             {
                 myFavorites.length? myFavorites.map((e, i) => (
                     <div className={styles.slide} key={i}>
