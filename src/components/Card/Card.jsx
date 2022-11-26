@@ -40,6 +40,12 @@ function Card(props) {
          }
       });
    }, [props.myFavorites]);
+
+   function handleDelete(){
+      setIsFav(false);
+      props.deleteFavorite(props.id)
+      return props.onClose()
+   }
    
    return (
       <div className={styles.slide}>
@@ -47,7 +53,7 @@ function Card(props) {
             isFav ? ( <button className={styles.favorite} onClick={handleFavorite}>❤️</button>):
             ( <button className={styles.favorite} onClick={handleFavorite}>🤍</button> )
          }
-         <button className={styles.remove} onClick={props.onClose}>X</button>
+         <button className={styles.remove} onClick={handleDelete}>X</button>
          <img className={styles.img} src={props.image} alt="" />
          <Link to={`/detail/${props.id}`} className={styles.link}>
             <h2 className={styles.name}>{props.name}</h2>
