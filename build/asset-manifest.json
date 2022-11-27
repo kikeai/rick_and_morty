@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/rick_and_morty/build/static/css/main.48494040.css",
-    "main.js": "/rick_and_morty/build/static/js/main.df10b5e3.js",
+    "main.css": "/rick_and_morty/build/static/css/main.2b352cce.css",
+    "main.js": "/rick_and_morty/build/static/js/main.da1bf97f.js",
     "static/media/gif.gif": "/rick_and_morty/build/static/media/gif.65c399d6afa8cb5922e2.gif",
+    "static/media/para-presentacion.png": "/rick_and_morty/build/static/media/para-presentacion.1ac7750f845f6a359fec.png",
     "static/media/logo-rick-and-morty.png": "/rick_and_morty/build/static/media/logo-rick-and-morty.21a2f0ed5cf3294132e8.png",
+    "static/media/logo-github.png": "/rick_and_morty/build/static/media/logo-github.2f9ddac7f78a41e652e8.png",
+    "static/media/logo-instagram.png": "/rick_and_morty/build/static/media/logo-instagram.e4e9ce02699ba479bdeb.png",
+    "static/media/logo-twitter.png": "/rick_and_morty/build/static/media/logo-twitter.46210b942acc86eaae73.png",
+    "static/media/logo-linkedin.png": "/rick_and_morty/build/static/media/logo-linkedin.0948ed58caa677de07fd.png",
     "index.html": "/rick_and_morty/build/index.html",
-    "main.48494040.css.map": "/rick_and_morty/build/static/css/main.48494040.css.map",
-    "main.df10b5e3.js.map": "/rick_and_morty/build/static/js/main.df10b5e3.js.map"
+    "main.2b352cce.css.map": "/rick_and_morty/build/static/css/main.2b352cce.css.map",
+    "main.da1bf97f.js.map": "/rick_and_morty/build/static/js/main.da1bf97f.js.map"
   },
   "entrypoints": [
-    "static/css/main.48494040.css",
-    "static/js/main.df10b5e3.js"
+    "static/css/main.2b352cce.css",
+    "static/js/main.da1bf97f.js"
   ]
 }
