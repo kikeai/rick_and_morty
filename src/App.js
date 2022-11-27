@@ -51,7 +51,7 @@ function App () {
 
   return (
     <div className='App' >
-      {location.pathname !== "/" && <Nav onSearch={onSearch}/>}
+      { location.pathname !== "/" && location.pathname !== "/about" && <Nav onSearch={onSearch}/> }
      <Routes>
         <Route path='/' element={<Inicio login={login} />} />
         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />

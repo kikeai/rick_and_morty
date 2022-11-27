@@ -38,6 +38,7 @@
     font-size: 1.5em;
     position: absolute;
     border: none;
+    border-radius: 10px 0px 0px 0px;
     padding: 15px;
     color: rgb(117, 117, 117);
     cursor: pointer;
@@ -45,7 +46,6 @@
 }
 
 .remove:hover{
-    border-radius: 10px 0px 0px 0px;
     background-color: rgb(182, 32, 32);
     color: white;
 }
