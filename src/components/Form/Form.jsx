@@ -45,12 +45,17 @@ export default function Form({login}){
         login(userData);
     }
 
+    function datos(e){
+        e.preventDefault()
+        window.alert("/Username: luis@gmail.com/ || /Password: 1password/")
+    }
+
     return (
         <div>
             <form className={styles.formContainer}
             onSubmit={handleSubmit}>
         <h1>Inicia Sesión</h1>
-        <p>¿No tienes una cuenta? <a href="/">Ingresa aquí</a></p>
+        <p>Datos para ingresar: <button onClick={datos}>Datos</button></p>
         
         <div className={styles.formGroup}>
             <input type="text" name="username" className={styles.formInputOk} value={userData.username} onChange={handleChange} placeholder=" " autoComplete="off" />
