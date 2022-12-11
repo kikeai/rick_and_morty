@@ -20,12 +20,13 @@ function Favorites({ myFavorites }){
     return (
         <div className={styles.carta}>
             <div className={styles.selects}>
-                <select className={styles.option} name="order" onClick={handleClick}>
+                <select className={styles.option} name="order" onChange={handleClick}>
                     <option value="Ascendente">Ascendente</option>
                     <option value="Descendente">Descendente</option>
                 </select>
 
-                <select className={styles.option} name="filter" onClick={handleClick}>
+                <select className={styles.option} name="filter" onChange={handleClick}>
+                <option value="All" >All</option>
                     <option value="Male" >Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>

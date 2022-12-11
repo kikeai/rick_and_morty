@@ -31,13 +31,14 @@ export default function favorites(state=initialState, action){
             }
         case FILTER:
             const filterCopy = [...state.allCharacters]
-            const filtrado = filterCopy.filter(e => e.gender === action.payload)
+            let filtrado = filterCopy.filter(e => e.gender === action.payload)
+            if(action.payload === "All") filtrado = filterCopy;
             return {
                 ...state,
                  myFavorites: filtrado
             }
         case ORDER:
-            const orderCopy = [...state.allCharacters]
+            const orderCopy = [...state.myFavorites]
             const sorteo = (metod) => {
                 if(metod === "Ascendente"){
                     return orderCopy.sort((a, b) => {
