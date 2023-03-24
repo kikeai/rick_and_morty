@@ -55,7 +55,7 @@ export default function Form({login}){
             <form className={styles.formContainer}
             onSubmit={handleSubmit}>
         <h1>Inicia Sesión</h1>
-        <p>Datos para ingresar: <button onClick={datos}>Datos</button></p>
+        <p>Datos para ingresar:<br/>Email: luis@gmail.com<br/>password: 1password</p>
         
         <div className={styles.formGroup}>
             <input type="text" name="username" className={styles.formInputOk} value={userData.username} onChange={handleChange} placeholder=" " autoComplete="off" />
